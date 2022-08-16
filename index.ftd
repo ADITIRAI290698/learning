@@ -1,1 +1,138 @@
--- ds.page: hello
+-- import: fpm
+
+
+-- boolean is-mobile: false
+
+-- is-mobile: true
+if: $ftd.device == mobile
+
+
+-- ds.page: DIALOG BOX
+
+This page helps you to create a dialog box using `ftd`.
+
+
+
+
+
+-- ds.h2: Dialog Box
+
+
+-- ds.code: `Code`
+lang: ftd
+
+
+\
+
+Reset settings?
+
+This will reset your device to its default factory settings.                                         
+
+
+CANCEL      ACCEPT
+
+
+
+
+
+--- ftd.text: Output of above:
+padding-vertical: 12
+color: $fpm.color.main.text
+role: $fpm.type.heading-small
+text-align: center
+align: left
+
+
+
+
+
+-- box-1:
+card-desc1: $s1
+card-desc2: $s2
+card-desc3: $s3
+
+
+
+
+
+-- string s1:
+
+Reset settings?
+
+
+-- string s2:
+
+This will reset your device to its default factory settings.
+
+
+-- string s3:
+
+CANCEL      ACCEPT
+
+
+
+
+
+
+
+
+
+
+-- ftd.column box-1:
+optional caption title:
+optional string label:
+ftd.image-src src: $assets.files.bg1.png
+background-color: $fpm.color.main.background.step-2
+optional string card-desc1:
+optional string card-desc2:
+optional string card-desc3:
+min-width: percent 50
+margin-top: $fpm.space.space-6
+margin-bottom: $fpm.space.space-6
+background-image: $src
+background-repeat: false
+padding-vertical: $fpm.space.space-8
+padding-horizontal:  $fpm.space.space-8
+width: percent 80
+height: 560
+width if $is-mobile: fill
+align: center
+
+
+--- ftd.column:
+background-color: $fpm.color.main.background.overlay
+align: center
+padding-vertical: $fpm.space.space-2
+padding-horizontal: $fpm.space.space-2
+max-width: 756
+
+
+--- ftd.text:
+text: $card-desc1
+padding-vertical: $fpm.space.space-6
+color: $fpm.color.main.text-strong
+role: $fpm.type.heading-small
+align: left
+text-align: left
+
+
+--- ftd.text:
+text: $card-desc2
+color: $fpm.color.main.border
+role: $fpm.type.copy-relaxed
+padding-horizontal: $fpm.space.space-7
+text-align: left
+align: left
+
+
+--- ftd.text:
+text: $card-desc3
+color: $fpm.color.main.custom.four
+role: $fpm.type.copy-tight
+padding-horizontal: $fpm.space.space-7
+text-align: right
+align: right
+
+
+
+--- container: ftd.main
