@@ -50,6 +50,7 @@ align: left
 card-desc1: $s1
 card-desc2: $s2
 card-desc3: $s3
+card-desc4: $s4
 
 
 
@@ -67,7 +68,11 @@ This will reset your device to its default factory settings.
 
 -- string s3:
 
-CANCEL      ACCEPT
+CANCEL
+
+-- string s4:
+
+ACCEPT
 
 
 
@@ -78,7 +83,7 @@ CANCEL      ACCEPT
 
 
 
--- ftd.column box-1:
+-- ftd.row box-1:
 optional caption title:
 optional string label:
 ftd.image-src src: $assets.files.bg1.png
@@ -86,6 +91,7 @@ background-color: $fpm.color.main.background.step-2
 optional string card-desc1:
 optional string card-desc2:
 optional string card-desc3:
+optional string card-desc4:
 min-width: percent 50
 margin-top: $fpm.space.space-6
 margin-bottom: $fpm.space.space-6
@@ -101,14 +107,15 @@ align: center
 
 --- ftd.column:
 background-color: $fpm.color.main.background.overlay
-align: center
 padding-vertical: $fpm.space.space-2
 padding-horizontal: $fpm.space.space-2
 max-width: 756
+position: center
 
 
 --- ftd.text:
 text: $card-desc1
+padding-horizontal: $fpm.space.space-7
 padding-vertical: $fpm.space.space-6
 color: $fpm.color.main.text-strong
 role: $fpm.type.heading-small
@@ -121,9 +128,13 @@ text: $card-desc2
 color: $fpm.color.main.border
 role: $fpm.type.copy-relaxed
 padding-horizontal: $fpm.space.space-7
+padding-bottom: $fpm.space.space-6
 text-align: left
 align: left
 
+
+--- ftd.row:
+align: right
 
 --- ftd.text:
 text: $card-desc3
@@ -132,6 +143,16 @@ role: $fpm.type.copy-tight
 padding-horizontal: $fpm.space.space-7
 text-align: right
 align: right
+cursor: pointer
+
+--- ftd.text:
+text: $card-desc4
+color: $fpm.color.main.custom.four
+role: $fpm.type.copy-tight
+padding-horizontal: $fpm.space.space-7
+text-align: right
+align: right
+cursor: pointer
 
 
 
